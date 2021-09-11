@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const cors = require("cors");
-const Students = require("./StudentModel.js");
+const {Students, Teachers} = require("./StudentModel.js");
 const app = express();
 const port = 8080 || process.env.PORT;
 
@@ -22,7 +22,7 @@ app.get("/",(req,res)=>{
   res.send("The Rest Api is working!");
 })
 
-app.get("/view",(req,res)=>{
+app.get("/viewStudents",(req,res)=>{
   Students.find((err,data)=>{
     if(err){
       res.send(err);
@@ -32,9 +32,30 @@ app.get("/view",(req,res)=>{
   })
 })
 
-app.post("/create",(req,res)=>{
+app.get("/viewTeachers", (req,res)=>{
+  Teachers.find((err,data)=>{
+    if(err){
+      res.send(err);
+    } else {
+      res.send(err);
+    }
+  })
+})
+
+app.post("/createStudent",(req,res)=>{
   const sampleStudent = req.body;
   Students.create(sampleStudent, (err,data) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.send(data);
+    }
+  })
+})
+
+app.post("/createTeacher",(req,res)=>{
+  const sampleTeacher = req.body;
+  Teachers.create(sampleTeacher, (err,data) => {
     if(err){
       res.send(err);
     } else {

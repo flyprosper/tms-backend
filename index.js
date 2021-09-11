@@ -4,7 +4,7 @@ const dotenv = require("dotenv")
 const cors = require("cors");
 const Students = require("./StudentModel.js");
 const app = express();
-const port = 8000 || process.env.PORT;
+const port = 8080 || process.env.PORT;
 
 app.use(express.json());            //body parser
 app.use(cors());                    //cross origin resources
@@ -48,5 +48,5 @@ app.post("/name",(req,res)=>{
 })
 
 app.listen(port, () => {
-  console.log("App listening on http://localhost:8000")
+  console.log("App listening on http://localhost:8080")
 })

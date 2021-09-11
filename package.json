@@ -4,7 +4,6 @@
   "description": "TMS Backend",
   "main": "index.js",
   "scripts": {
-    "serve": "lt --port 8000"
   },
   "author": "",
   "license": "ISC",

@@ -4,7 +4,6 @@
   "description": "TMS Backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "lt --port 8000"
   },
   "author": "",

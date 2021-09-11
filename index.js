@@ -37,7 +37,7 @@ app.get("/viewTeachers", (req,res)=>{
     if(err){
       res.send(err);
     } else {
-      res.send(err);
+      res.send(data);
     }
   })
 })
